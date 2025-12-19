@@ -161,8 +161,8 @@ EOF
 | Variable | Required | Description |
 | :--- | :--- | :--- |
 | `LITELLM_API_KEY` | **Yes** | Your API key for the LiteLLM proxy. |
-| `SEO_SHEET_ID` | No | Google Sheet ID for SEO data. Defaults to the official Hackathon sheet. |
-| `SEO_SHEET_GID` | No | GID of the specific worksheet. Defaults to `1438203274`. |
+| `SEO_SHEET_ID` | Optional | Defaults to the official Hackathon sheet if not provided. |
+| `SEO_SHEET_GID` | Optional | Defaults to `1438203274` if not provided. |
 ```
 
 **Step 2.2: Deploy the server**
