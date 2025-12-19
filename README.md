@@ -119,6 +119,8 @@ Proper handling of GA4's date format requirements:
 *   Validates and normalizes all dates
 *   **Result**: Prevents common GA4 API errors
 
+> **[View Detailed Technical Documentation](TECHNICAL_DOCUMENTATION.md)** for sequence diagrams, data models, and deep-dive architecture.
+
 ## 🚀 Setup & Usage
 
 ### Prerequisites
