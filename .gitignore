@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+.env
+
+# Logs
+*.log
+
+# Hackathon specific
+credentials.json
+test_results.txt
+validation_report.txt
+
+# System
+.DS_Store

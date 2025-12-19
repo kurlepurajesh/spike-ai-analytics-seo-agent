@@ -1,0 +1,19 @@
+# Web Framework (Fast & Async)
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+pydantic>=2.0.0
+
+# AI / LLM (To talk to LiteLLM Proxy)
+openai>=1.10.0
+python-dotenv>=1.0.0
+httpx>=0.25.0
+
+# Tier 1: Analytics Agent (GA4)
+google-analytics-data>=0.18.0
+google-auth>=2.27.0
+
+# Tier 2: SEO Agent (Spreadsheet Processing)
+pandas>=2.2.0
+requests>=2.31.0
+openpyxl>=3.1.2
+google-api-python-client>=2.100.0

@@ -1,0 +1,11 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run Validation Script",
+			"type": "shell",
+			"command": "python3 validate_outputs.py",
+			"group": "test"
+		}
+	]
+}
