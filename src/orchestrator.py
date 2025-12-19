@@ -16,7 +16,7 @@ class Orchestrator:
             api_key=os.environ.get("LITELLM_API_KEY", "sk-placeholder"),
             base_url="http://3.110.18.218",
             http_client=httpx.Client(verify=False),
-            timeout=60.0
+            timeout=120.0
         )
 
     def route_query(self, query: str, property_id: Optional[str] = None) -> Dict[str, Any]:
@@ -108,7 +108,7 @@ Respond with ONLY one word: analytics, seo, or fusion"""
                 response = self.client.chat.completions.create(
                     model=model,
                     messages=[{"role": "user", "content": prompt}],
-                    timeout=30
+                    timeout=120
                 )
                 return response.choices[0].message.content
             except APIError as e:

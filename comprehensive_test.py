@@ -66,7 +66,7 @@ def test_analytics_query():
         response = requests.post(
             f"{BASE_URL}/query",
             json={"propertyId": PROPERTY_ID, "query": query},
-            timeout=90
+            timeout=300
         )
         
         if response.status_code != 200:
@@ -120,7 +120,7 @@ def test_seo_query():
         response = requests.post(
             f"{BASE_URL}/query",
             json={"propertyId": PROPERTY_ID, "query": query},
-            timeout=30
+            timeout=300
         )
         
         if response.status_code != 200:
@@ -175,7 +175,7 @@ def test_seo_filtering():
         response = requests.post(
             f"{BASE_URL}/query",
             json={"propertyId": PROPERTY_ID, "query": query},
-            timeout=30
+            timeout=300
         )
         
         if response.status_code != 200:
@@ -217,7 +217,7 @@ def test_json_output():
         response = requests.post(
             f"{BASE_URL}/query",
             json={"propertyId": PROPERTY_ID, "query": query},
-            timeout=30
+            timeout=300
         )
         
         if response.status_code != 200:
@@ -254,7 +254,7 @@ def test_fusion_query():
         response = requests.post(
             f"{BASE_URL}/query",
             json={"propertyId": PROPERTY_ID, "query": query},
-            timeout=60
+            timeout=300
         )
         
         if response.status_code != 200:
@@ -309,7 +309,7 @@ def test_error_handling():
         response = requests.post(
             f"{BASE_URL}/query",
             json={"propertyId": invalid_property, "query": query},
-            timeout=30
+            timeout=300
         )
         
         # Should not crash (status code should be 200 with error message)
@@ -352,7 +352,7 @@ def test_intent_detection():
             response = requests.post(
                 f"{BASE_URL}/query",
                 json={"propertyId": PROPERTY_ID, "query": query},
-                timeout=30
+                timeout=300
             )
             
             if response.status_code == 200:

@@ -23,13 +23,13 @@ class SeoAgent:
             api_key=os.environ.get("LITELLM_API_KEY", "sk-placeholder"),
             base_url="http://3.110.18.218",
             http_client=httpx.Client(verify=False),
-            timeout=60.0
+            timeout=120.0
         )
         
         # Load SEO data
-        # Using the provided Google Sheet ID
-        self.sheet_id = "1zzf4ax_H2WiTBVrJigGjF2Q3Yz-qy2qMCbAMKvl6VEE"
-        self.gid = "1438203274"
+        # Using the provided Google Sheet ID (from env or default)
+        self.sheet_id = os.environ.get("SEO_SHEET_ID", "1zzf4ax_H2WiTBVrJigGjF2Q3Yz-qy2qMCbAMKvl6VEE")
+        self.gid = os.environ.get("SEO_SHEET_GID", "1438203274")
         self.csv_url = f"https://docs.google.com/spreadsheets/d/{self.sheet_id}/export?format=csv&gid={self.gid}"
 
     def _load_data(self) -> pd.DataFrame:
@@ -165,7 +165,7 @@ class SeoAgent:
                 response = self.llm_client.chat.completions.create(
                     model=model,
                     messages=[{"role": "user", "content": prompt}],
-                    timeout=30
+                    timeout=120
                 )
                 return response.choices[0].message.content
             except APIError as e:

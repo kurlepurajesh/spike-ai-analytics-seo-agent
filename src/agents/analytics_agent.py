@@ -22,7 +22,7 @@ class AnalyticsAgent:
             api_key=os.environ.get("LITELLM_API_KEY", "sk-placeholder"),
             base_url="http://3.110.18.218",
             http_client=httpx.Client(verify=False),
-            timeout=60.0
+            timeout=120.0
         )
         
         # Initialize GA4 client
@@ -94,7 +94,7 @@ class AnalyticsAgent:
                 response = self.llm_client.chat.completions.create(
                     model=model,
                     messages=[{"role": "user", "content": prompt}],
-                    timeout=30
+                    timeout=120
                 )
                 return response.choices[0].message.content
             except APIError as e:
