@@ -24,20 +24,20 @@ The system follows a **Hub-and-Spoke** design where the `Orchestrator` acts as t
 
 ```mermaid
 graph TD
-    Client[User / Client App] -->|HTTP POST /query| API[FastAPI Gateway]
+    Client["User / Client App"] -->|HTTP POST /query| API["FastAPI Gateway"]
     
     subgraph "🧠 Core Intelligence"
-        API --> Orch[Orchestrator]
-        Orch -->|Classify Intent| LLM[LLM (Gemini 2.5)]
+        API --> Orch["Orchestrator"]
+        Orch -->|Classify Intent| LLM["LLM (Gemini 2.5)"]
         
-        Orch -->|Route| AA[Analytics Agent]
-        Orch -->|Route| SA[SEO Agent]
-        Orch -->|Route| FL[Fusion Layer]
+        Orch -->|Route| AA["Analytics Agent"]
+        Orch -->|Route| SA["SEO Agent"]
+        Orch -->|Route| FL["Fusion Layer"]
     end
     
     subgraph "💾 Data Layer"
-        AA <-->|JSON API| GA4[Google Analytics 4]
-        SA <-->|CSV Stream| GSheets[Screaming Frog Data]
+        AA <-->|JSON API| GA4["Google Analytics 4"]
+        SA <-->|CSV Stream| GSheets["Screaming Frog Data"]
     end
     
     FL -.->|Combine| AA
