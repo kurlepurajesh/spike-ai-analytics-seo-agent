@@ -147,8 +147,22 @@ This will help you:
 # Place your GA4 service account credentials
 cp /path/to/your/credentials.json ./credentials.json
 
-# Create .env file (if not exists)
-echo "LITELLM_API_KEY=sk-your-key-here" > .env
+# Create .env file
+cat <<EOF > .env
+# Required: Your LiteLLM API Key
+LITELLM_API_KEY=sk-your-key-here
+
+# Optional: Override the default Hackathon SEO Sheet
+# SEO_SHEET_ID=1zzf4ax_H2WiTBVrJigGjF2Q3Yz-qy2qMCbAMKvl6VEE
+EOF
+```
+
+### Environment Variables
+| Variable | Required | Description |
+| :--- | :--- | :--- |
+| `LITELLM_API_KEY` | **Yes** | Your API key for the LiteLLM proxy. |
+| `SEO_SHEET_ID` | No | Google Sheet ID for SEO data. Defaults to the official Hackathon sheet. |
+| `SEO_SHEET_GID` | No | GID of the specific worksheet. Defaults to `1438203274`. |
 ```
 
 **Step 2.2: Deploy the server**
